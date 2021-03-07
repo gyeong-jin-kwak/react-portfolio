@@ -1,1 +1,1 @@
-# Kwak Gyeong Jin's Portfolio with React
+# GyeongJinKwak's Portfolio with React
