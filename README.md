@@ -5,10 +5,10 @@
 
 ## Screens
 
-- [] Home
-- [] Profile
-- [] Projects
-- [] Toy Projects
-- [] Contact Page
-- [] Search
-- [] Detail
+- [ ] Home
+- [ ] Profile
+- [ ] Projects
+- [ ] Toy Projects
+- [ ] Contact Page
+- [ ] Search
+- [ ] Detail
