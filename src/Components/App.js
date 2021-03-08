@@ -1,8 +1,13 @@
+import Router from './Router'
+import Header from './Header'
+
 function App() {
   return (
-    <div className="App">
-    </div>
-  );
+    <>
+      <Header />
+      <Router />
+    </>
+  )
 }
 
-export default App;
+export default App
