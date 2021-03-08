@@ -9,10 +9,17 @@
 
 ```
 ├── src
-    ├── Components 
-    │    ├── App.js 
+    ├── Components
+    │    ├── App.js
     │    └── Router.js
     └── Routes
+         ├── Home.js
+         ├── Profile.js
+         ├── Projects.js
+         ├── ToyProjects.js
+         ├── Contact.js
+         ├── Search.js
+         └── Detail.js
 ```
 
 ## Screens
