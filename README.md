@@ -7,6 +7,7 @@
 - `yarn add styled-components`
 - `yarn add styled-reset`
 - `yarn add url-loader`
+- `yarn add file-loader`
 
 ## Directory
 

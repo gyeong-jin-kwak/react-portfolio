@@ -11,11 +11,18 @@ const Header = styled.header`
   width: 100%;
   height: 50px;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 20px;
   box-shadow: 0px 3px 5px 1px rgba(20, 20, 20, 0.2);
 `;
 
-const Logo = styled(Link)``;
+const Logo = styled(Link)`
+  display: inline-block;
+  width: 25px;
+`;
+
+const SVG = styled.img`
+  width: 100%;
+`;
 
 const Nav = styled.nav`
   display: flex;
@@ -32,7 +39,7 @@ export default function Head() {
   return (
     <Header>
       <Logo to="/">
-        <img
+        <SVG
           src={require("../assets/gj_logo_01_svg.svg")}
           alt="곽경진의 포트폴리오"
         />
