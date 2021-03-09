@@ -4,15 +4,21 @@ import styled from "styled-components";
 
 const Header = styled.header`
   position: fixed;
-  display: flex;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   height: 50px;
-  align-items: center;
   padding: 0 20px;
   box-shadow: 0px 3px 5px 1px rgba(20, 20, 20, 0.2);
+`;
+
+const InnerHeader = styled.div`
+  display: flex;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  align-items: center;
 `;
 
 const Logo = styled(Link)`
@@ -38,19 +44,21 @@ const NavItem = styled(Link)`
 export default function Head() {
   return (
     <Header>
-      <Logo to="/">
-        <SVG
-          src={require("../assets/gj_logo_01_svg.svg")}
-          alt="곽경진의 포트폴리오"
-        />
-      </Logo>
-      <Nav>
-        <NavItem to="/profile">Profile</NavItem>
-        <NavItem to="/projects">Projects</NavItem>
-        <NavItem to="/toyprojects">Toy Projects</NavItem>
-        <NavItem to="/contact">Contact</NavItem>
-        <NavItem to="search">Search</NavItem>
-      </Nav>
+      <InnerHeader>
+        <Logo to="/">
+          <SVG
+            src={require("../assets/gj_logo_01_svg.svg")}
+            alt="곽경진의 포트폴리오"
+          />
+        </Logo>
+        <Nav>
+          <NavItem to="/profile">Profile</NavItem>
+          <NavItem to="/projects">Projects</NavItem>
+          <NavItem to="/toyprojects">Toy</NavItem>
+          <NavItem to="/contact">Contact</NavItem>
+          <NavItem to="search">Search</NavItem>
+        </Nav>
+      </InnerHeader>
     </Header>
   );
 }
