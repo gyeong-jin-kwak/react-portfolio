@@ -1,1 +1,3 @@
-export default () => 'Search'
+export default function Search() {
+  return "Search";
+}

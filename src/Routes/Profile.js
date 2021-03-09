@@ -1,1 +1,3 @@
-export default () => 'Profile'
+export default function Profile() {
+  return "Profile";
+}

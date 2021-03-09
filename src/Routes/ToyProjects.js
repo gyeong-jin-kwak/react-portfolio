@@ -1,1 +1,3 @@
-export default () => 'ToyProjects'
+export default function ToyProjects() {
+  return "Toy Projects";
+}

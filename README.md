@@ -4,6 +4,7 @@
 
 - `yarn add react-router-dom`
 - `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D`
+- `yarn add styled-components`
 
 ## Directory
 
@@ -21,6 +22,8 @@
          ├── Search.js
          └── Detail.js
 ```
+
+## Prettier, ESLint 적용
 
 ## Screens
 

@@ -1,5 +1,5 @@
-import Router from './Router'
-import Header from './Header'
+import Router from "./Router";
+import Header from "./Header";
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <Header />
       <Router />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
