@@ -33,6 +33,14 @@
 
 ## Prettier, ESLint 적용
 
+## BreakPoint
+
+```
+const BREAK_POINT_MOBILE: number = 768;
+const BREAK_POINT_TABLET: number = 992;
+const BREAK_POINT_PC: number = 1200;
+```
+
 ## Screens
 
 - [ ] Home

@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+const BREAK_POINT_MOBILE: number = 768;
+const BREAK_POINT_TABLET: number = 992;
+const BREAK_POINT_PC: number = 1200;
+
 const Header = styled.header`
   position: fixed;
   top: 0;
@@ -31,8 +35,11 @@ const SVG = styled.img`
 `;
 
 const Nav = styled.nav`
-  display: flex;
+  display: none;
   margin-left: auto;
+  @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+    display: flex;
+  }
 `;
 
 const NavItem = styled(Link)`
