@@ -5,6 +5,7 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
+import Header from "./Header";
 import Home from "Routes/Home";
 import Profile from "Routes/Profile";
 import Projects from "Routes/Projects";
@@ -15,6 +16,7 @@ import Search from "Routes/Search";
 export default function Routes() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/profile" component={Profile} />

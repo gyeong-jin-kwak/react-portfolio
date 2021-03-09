@@ -1,26 +1,29 @@
 # GyeongJinKwak's Portfolio with React
 
-## Install Modules
+## Installed Modules
 
 - `yarn add react-router-dom`
 - `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D`
 - `yarn add styled-components`
+- `yarn add styled-reset`
+- `yarn add url-loader`
 
 ## Directory
 
 ```
 ├── src
-    ├── Components
-    │    ├── App.js
-    │    └── Router.js
-    └── Routes
-         ├── Home.js
-         ├── Profile.js
-         ├── Projects.js
-         ├── ToyProjects.js
-         ├── Contact.js
-         ├── Search.js
-         └── Detail.js
+│    ├── Components
+│    │    ├── App.js
+│    │    └── Router.js
+│    ├── Routes
+│    │    ├── Home.js
+│    │    ├── Profile.js
+│    │    ├── Projects.js
+│    │    ├── ToyProjects.js
+│    │    ├── Contact.js
+│    │    ├── Search.js
+│    │    └── Detail.js
+│    ├── assets
 ```
 
 ## Prettier, ESLint 적용
