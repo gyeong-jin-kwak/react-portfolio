@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const BREAK_POINT_MOBILE: number = 768;
-const BREAK_POINT_TABLET: number = 992;
-const BREAK_POINT_PC: number = 1200;
+import Hamburger from "Components/Hamburger";
+import { BREAK_POINT_TABLET } from "Components/utilStyles";
 
 const Header = styled.header`
   position: fixed;
@@ -48,6 +47,13 @@ const NavItem = styled(Link)`
   }
 `;
 
+const MenuIcon = styled(Hamburger)`
+  margin-left: auto;
+  @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+    display: none;
+  }
+`;
+
 export default function Head() {
   return (
     <Header>
@@ -58,6 +64,7 @@ export default function Head() {
             alt="곽경진의 포트폴리오"
           />
         </Logo>
+        <MenuIcon />
         <Nav>
           <NavItem to="/profile">Profile</NavItem>
           <NavItem to="/projects">Projects</NavItem>
