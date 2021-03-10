@@ -1,5 +1,7 @@
+import React from "react";
+
 const ToyProjects: React.VFC = () => {
-  return <span>ToyProjects</span>;
+	return <span>ToyProjects</span>;
 };
 
 export default ToyProjects;

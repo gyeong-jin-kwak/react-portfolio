@@ -1,5 +1,7 @@
+import React from "react";
+
 const Detail: React.VFC = () => {
-  return <span>Detail</span>;
+	return <span>Detail</span>;
 };
 
 export default Detail;

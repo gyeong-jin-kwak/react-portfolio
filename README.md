@@ -12,6 +12,10 @@
 - `yarn add @types/styled-components`
 - `yarn add @types/react-router`
 - `yarn add @types/react-router-dom`
+- `yarn add @typescript-eslint/parser`
+- `yarn add -D @typescript-eslint/eslint-plugin`
+- `yarn add eslint-config-airbnb`
+- `npm i eslint-config-prettier@latest`
 
 ## Directory
 
@@ -32,6 +36,7 @@
 ```
 
 ## Prettier, ESLint 적용
+  - `yarn run prettier`
 
 ## BreakPoint
 

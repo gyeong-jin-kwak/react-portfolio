@@ -71,6 +71,6 @@
     "baseUrl": "src",
     "typeRoots": ["node_modules/@types"]
   },
-  "include": ["src"],
+  "include": ["src", ".eslintrc"],
   "jsx": "react"
 }
