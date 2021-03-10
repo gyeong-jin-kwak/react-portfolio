@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -55,6 +55,8 @@ const MenuIcon = styled(Hamburger)`
 `;
 
 export default function Head() {
+  const [open, setOpen] = useState(false);
+
   return (
     <Header>
       <InnerHeader>

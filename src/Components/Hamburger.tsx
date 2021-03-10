@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface Istate {
   className?: string;
+  onClick?: () => void;
 }
 
 const hamburgerLine = () => `
@@ -47,9 +48,9 @@ const HamburgerBar = styled.span`
   }
 `;
 
-export default function Hamburger({ className }: Istate) {
+export default function Hamburger({ className, onClick }: Istate) {
   return (
-    <HamburgerButton className={className}>
+    <HamburgerButton className={className} onClick={onClick}>
       <HamburgerBox>
         <HamburgerBar />
       </HamburgerBox>
