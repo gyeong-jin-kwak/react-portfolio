@@ -57,6 +57,11 @@ const MenuIcon = styled(Hamburger)`
 export default function Head() {
 	const [open, setOpen] = useState(false);
 
+	const handleClick = () => {
+		const toggleOpen = !open;
+		setOpen(toggleOpen);
+	};
+
 	return (
 		<Header>
 			<InnerHeader>
@@ -66,7 +71,7 @@ export default function Head() {
 						alt="곽경진의 포트폴리오"
 					/>
 				</Logo>
-				<MenuIcon />
+				<MenuIcon onClick={handleClick} open={open} />
 				<Nav>
 					<NavItem to="/profile">Profile</NavItem>
 					<NavItem to="/projects">Projects</NavItem>

@@ -13,7 +13,8 @@
     "@typescript-eslint/no-use-before-define": ["error"],
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
     "global-require": 0,
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "consistent-return": "off"
   },
   // unable-to-resolve-path-to-module
   "settings": {

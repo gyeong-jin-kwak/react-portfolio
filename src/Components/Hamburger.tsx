@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-interface Istate {
+interface Props {
 	className?: string;
-	onClick?: () => void;
+	onClick: () => void;
+	open: boolean;
 }
 
 const hamburgerLine = () => `
   width: 100%;
   height: 3px;
-  background-color: black;
   position: absolute;
   left: 0;
 `;
@@ -27,9 +27,10 @@ const HamburgerBox = styled.span`
 	height: 24px;
 `;
 
-const HamburgerBar = styled.span`
+const HamburgerBar = styled.span<{ open: boolean }>`
 	${hamburgerLine}
 	top: 50%;
+	background-color: ${(props) => (props.open ? "transparent" : "#000")};
 	transform: translateY(-50%);
 	transition: background-color 0.1s 0.2s ease-in-out;
 
@@ -37,31 +38,42 @@ const HamburgerBar = styled.span`
 	&:after {
 		${hamburgerLine}
 		content: "";
+		background-color: #000;
 		transition: transform 0.1s 0.2s ease-in-out;
 	}
 
 	&:before {
 		top: -10px;
+		transform: ${(props) =>
+			props.open
+				? "translateY(10px) rotate(45deg)"
+				: "translateY(0) rotate(0)"};
 	}
 
 	&:after {
 		top: 10px;
+		transform: ${(props) =>
+			props.open
+				? "translateY(-10px) rotate(-45deg)"
+				: "translateY(0) rotate(0)"};
 	}
 `;
 
-const Hamburger: React.VFC = ({ className, onClick }: Istate) => {
-	return (
-		<HamburgerButton className={className} onClick={onClick}>
-			<HamburgerBox>
-				<HamburgerBar />
-			</HamburgerBox>
-		</HamburgerButton>
-	);
+const Hamburger: React.FC<Props> = ({ onClick, open, className }: Props) => {
+	if (onClick) {
+		return (
+			<HamburgerButton onClick={onClick} className={className}>
+				<HamburgerBox>
+					<HamburgerBar open={open} />
+				</HamburgerBox>
+			</HamburgerButton>
+		);
+	}
+	return null;
 };
 
 Hamburger.defaultProps = {
-	className: null,
-	onClick: null,
+	className: "",
 };
 
 export default Hamburger;
