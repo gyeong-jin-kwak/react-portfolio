@@ -101,7 +101,7 @@ export default function Head() {
 					/>
 				</Logo>
 				<MenuIcon onClick={handleClick} open={open} />
-				<Nav open={open}>
+				<Nav onClick={handleClick} open={open}>
 					<NavItemContainer>
 						<NavItem to="/profile">Profile</NavItem>
 						<NavItem to="/projects">Projects</NavItem>
