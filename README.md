@@ -1,5 +1,12 @@
 # GyeongJinKwak's Portfolio with React
 
+## Tech Stack 
+- React
+- Typescript
+- Styled-Components
+- react + typescript + eslint + prettier
+  - `yarn run prettier`
+ 
 ## Installed Modules
 
 - `yarn add react-router-dom`
@@ -34,10 +41,6 @@
 │    │    └── Detail.js
 │    ├── assets
 ```
-
-## Prettier, ESLint 적용
-  - `yarn run prettier`
-
 ## BreakPoint
 
 ```
