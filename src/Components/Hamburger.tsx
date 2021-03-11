@@ -15,9 +15,11 @@ const hamburgerLine = () => `
 `;
 
 const HamburgerButton = styled.button`
+	position: relative;
 	display: block;
 	border: none;
 	background: transparent;
+	z-index: 5;
 `;
 
 const HamburgerBox = styled.span`
@@ -32,14 +34,14 @@ const HamburgerBar = styled.span<{ open: boolean }>`
 	top: 50%;
 	background-color: ${(props) => (props.open ? "transparent" : "#000")};
 	transform: translateY(-50%);
-	transition: background-color 0.1s 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
 
 	&:before,
 	&:after {
 		${hamburgerLine}
 		content: "";
-		background-color: #000;
-		transition: transform 0.1s 0.2s ease-in-out;
+		background-color: ${(props) => (props.open ? "#fff" : "#000")};
+		transition: all 0.2s ease-in-out;
 	}
 
 	&:before {
