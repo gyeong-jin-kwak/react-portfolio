@@ -6,23 +6,6 @@
 - Styled-Components
 - react + typescript + eslint + prettier
   - `yarn run prettier`
- 
-## Installed Modules
-
-- `yarn add react-router-dom`
-- `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D`
-- `yarn add styled-components`
-- `yarn add styled-reset`
-- `yarn add url-loader`
-- `yarn add file-loader`
-- `yarn add typescript @types/node @types/react @types/react-dom @types/jest`
-- `yarn add @types/styled-components`
-- `yarn add @types/react-router`
-- `yarn add @types/react-router-dom`
-- `yarn add @typescript-eslint/parser`
-- `yarn add -D @typescript-eslint/eslint-plugin`
-- `yarn add eslint-config-airbnb`
-- `npm i eslint-config-prettier@latest`
 
 ## Directory
 
@@ -52,9 +35,25 @@ const BREAK_POINT_PC: number = 1200;
 ## Screens
 
 - [ ] Home
-- [ ] Profile
+- [ ] About
 - [ ] Projects
-- [ ] Toy Projects
-- [ ] Contact Page
+- [ ] Toy
 - [ ] Search
 - [ ] Detail
+
+## Installed Modules
+
+- `yarn add react-router-dom`
+- `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D`
+- `yarn add styled-components`
+- `yarn add styled-reset`
+- `yarn add url-loader`
+- `yarn add file-loader`
+- `yarn add typescript @types/node @types/react @types/react-dom @types/jest`
+- `yarn add @types/styled-components`
+- `yarn add @types/react-router`
+- `yarn add @types/react-router-dom`
+- `yarn add @typescript-eslint/parser`
+- `yarn add -D @typescript-eslint/eslint-plugin`
+- `yarn add eslint-config-airbnb`
+- `npm i eslint-config-prettier@latest`
