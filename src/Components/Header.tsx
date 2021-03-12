@@ -83,7 +83,7 @@ const MenuIcon = styled(Hamburger)`
 	}
 `;
 
-export default function Head() {
+export default function Head(): JSX.Element {
 	const [open, setOpen] = useState(false);
 
 	const handleClick = () => {
@@ -103,10 +103,9 @@ export default function Head() {
 				<MenuIcon onClick={handleClick} open={open} />
 				<Nav onClick={handleClick} open={open}>
 					<NavItemContainer>
-						<NavItem to="/profile">Profile</NavItem>
+						<NavItem to="/about">About</NavItem>
 						<NavItem to="/projects">Projects</NavItem>
 						<NavItem to="/toyprojects">Toy</NavItem>
-						<NavItem to="/contact">Contact</NavItem>
 						<NavItem to="search">Search</NavItem>
 					</NavItemContainer>
 				</Nav>

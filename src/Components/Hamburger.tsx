@@ -61,7 +61,7 @@ const HamburgerBar = styled.span<{ open: boolean }>`
 	}
 `;
 
-const Hamburger: React.FC<Props> = ({ onClick, open, className }: Props) => {
+function Hamburger({ onClick, open, className }: Props): JSX.Element | null {
 	if (onClick) {
 		return (
 			<HamburgerButton onClick={onClick} className={className}>
@@ -72,7 +72,7 @@ const Hamburger: React.FC<Props> = ({ onClick, open, className }: Props) => {
 		);
 	}
 	return null;
-};
+}
 
 Hamburger.defaultProps = {
 	className: "",
