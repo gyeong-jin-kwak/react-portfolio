@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -47,6 +47,7 @@ const Nav = styled.nav<{ open: boolean }>`
 	color: #fff;
 	background-color: rgb(0, 0, 0, 0.5);
 	z-index: 1;
+
 	@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
 		position: relative;
 		display: flex;
@@ -86,10 +87,10 @@ const MenuIcon = styled(Hamburger)`
 export default function Head(): JSX.Element {
 	const [open, setOpen] = useState(false);
 
-	const handleClick = () => {
+	const handleClick = useCallback(() => {
 		const toggleOpen = !open;
-		setOpen(toggleOpen);
-	};
+		setOpen(() => toggleOpen);
+	}, [open]);
 
 	return (
 		<Header>
