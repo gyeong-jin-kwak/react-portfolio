@@ -13,12 +13,14 @@ const Header = styled.header`
 	width: 100%;
 	height: 50px;
 	padding: 0 20px;
+	background-color: #fff;
 	box-shadow: 0px 3px 5px 1px rgba(20, 20, 20, 0.2);
+	z-index: 5;
 `;
 
 const InnerHeader = styled.div`
 	display: flex;
-	max-width: 1200px;
+	max-width: 1024px;
 	height: 100%;
 	margin: 0 auto;
 	align-items: center;

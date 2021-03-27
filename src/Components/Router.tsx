@@ -11,22 +11,28 @@ import About from "Routes/About";
 import Projects from "Routes/Projects";
 import ToyProjects from "Routes/Toy";
 import Search from "Routes/Search";
+import Detail from "Routes/Detail";
 import Header from "./Header";
 
 function Routes(): JSX.Element {
 	return (
 		<Router>
 			<Header />
-			<Switch>
-				<Route path="/" exact component={Home} />
-				<Route path="/about" component={About} />
-				<Route path="/projects" component={Projects} />
-				<Route path="/toyprojects" component={ToyProjects} />
-				<Route path="/search" component={Search} />
+			<div className="wrap">
+				<main>
+					<Switch>
+						<Route path="/" exact component={Home} />
+						<Route path="/about" component={About} />
+						<Route path="/projects" component={Projects} />
+						<Route path="/toyprojects" component={ToyProjects} />
+						<Route path="/search" component={Search} />
+						<Route path="/detail" component={Detail} />
 
-				{/* 일치하는 경로가 없을 경우 '/' 경로로 이동 */}
-				<Redirect from="*" to="/" />
-			</Switch>
+						{/* 일치하는 경로가 없을 경우 '/' 경로로 이동 */}
+						<Redirect from="*" to="/" />
+					</Switch>
+				</main>
+			</div>
 		</Router>
 	);
 }
