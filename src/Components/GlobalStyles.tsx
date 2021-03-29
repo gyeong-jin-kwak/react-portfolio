@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
+import { BREAK_POINT_PC } from "Components/utilStyles";
 
 export default createGlobalStyle`
   ${reset};
@@ -19,21 +20,20 @@ export default createGlobalStyle`
     font-size: 14px;
   }
 
-  .wrap {
-    margin-top: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    width: calc(100% - 2rem);
-  }
-
   .container {
     &--card {
       display: flex;
-      margin-bottom: 2rem;
+      flex: 1 1 0%;
       background-color: rgb(248, 249, 250);
 
       .content-wrap {
-        flex: 1 1 0%;
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        @media only screen and (min-width: ${BREAK_POINT_PC}px) {
+          max-width: 1056px;
+        }
       }
     }
   }

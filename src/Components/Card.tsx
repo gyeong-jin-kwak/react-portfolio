@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { BREAK_POINT_MOBILE, BREAK_POINT_TABLET } from "Components/utilStyles";
+import {
+	BREAK_POINT_MOBILE,
+	BREAK_POINT_TABLET,
+	BREAK_POINT_PC,
+} from "Components/utilStyles";
 
 const Card = styled.article`
-	width: 20rem;
+	width: calc(100% - 2rem);
 	background: #fff;
 	border-radius: 4px;
 	box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
@@ -13,15 +17,16 @@ const Card = styled.article`
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
-		margin: 0px;
-		width: 100%;
-		& + & {
-			margin-top: 1rem;
-		}
+
+	& + & {
+		margin-top: 1rem;
 	}
+
 	@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
 		width: calc(50% - 2rem);
+	}
+	@media only screen and (min-width: ${BREAK_POINT_PC}px) {
+		width: 20rem;
 	}
 `;
 
@@ -125,6 +130,32 @@ const HashTag = styled(Link)`
 function ProjectCard(): JSX.Element | null {
 	return (
 		<>
+			<Card>
+				{/* 카드이미지 */}
+				<CardImgLink to="/detail">
+					<CardImg>
+						<img
+							src="https://img.animalplanet.co.kr/news/2019/11/04/700/80g5o10sbyai5zhj9n8k.jpg"
+							alt=""
+						/>
+					</CardImg>
+				</CardImgLink>
+
+				{/* 카드컨텐츠 */}
+				<CardContent>
+					<CardDescLink to="/detail">
+						<strong>카드제목</strong>
+						<CardDesc>
+							<p>이러이러한 프로젝트를 했다.</p>
+						</CardDesc>
+					</CardDescLink>
+					<TagsWrapper>
+						<HashTag to="/detail">React</HashTag>
+						<HashTag to="/detail">Typescript</HashTag>
+					</TagsWrapper>
+				</CardContent>
+			</Card>
+
 			<Card>
 				{/* 카드이미지 */}
 				<CardImgLink to="/detail">
