@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectCard from "Components/Card";
+import ProjectCard from "Components/Card/index";
 
 const ProjectsPresenter: React.VFC = () => {
 	return (
