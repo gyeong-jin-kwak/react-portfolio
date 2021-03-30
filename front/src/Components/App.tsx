@@ -11,10 +11,11 @@ function App(): JSX.Element {
 	// test
 	const dispatch = useDispatch();
 	const sagaData = useSelector((state: RootReducerType) => state.dataReducer);
+
 	useEffect(() => {
 		dispatch(requestData());
 		console.log(sagaData);
-	}, []);
+	}, [dispatch, sagaData]);
 
 	return (
 		<>
