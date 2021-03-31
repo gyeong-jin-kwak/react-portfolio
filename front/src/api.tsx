@@ -1,4 +1,4 @@
-const fetchData = async () => {
+const fetchData: () => Promise<Text> = async () => {
 	try {
 		const res = await fetch("https://api.kanye.rest/");
 		const data = await res.json();

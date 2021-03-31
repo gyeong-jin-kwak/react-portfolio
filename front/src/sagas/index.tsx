@@ -10,6 +10,6 @@ function* getApiData() {
 	}
 }
 
-export default function* mySaga() {
+export default function* mySaga(): Generator {
 	yield takeLatest(REQUEST_DATA, getApiData);
 }

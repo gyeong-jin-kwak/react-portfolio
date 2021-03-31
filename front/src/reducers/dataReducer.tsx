@@ -7,6 +7,8 @@ const initialState = {
 	quote: "jesus",
 };
 
+// 작업 후 eslint 제거
+// eslint-disable-next-line
 export const dataReducer = (state = initialState, action: dataActionType) => {
 	switch (action.type) {
 		case RECEIVE_DATA:

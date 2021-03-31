@@ -1,11 +1,15 @@
-export const REQUEST_DATA = "REQUEST_DATA" as const;
-export const RECEIVE_DATA = "RECEIVE_DATA" as const;
+export const LOAD_CARDS_REQUEST = "LOAD_CARDS_REQUEST" as const;
+export const LOAD_CARDS_SUCCESS = "LOAD_CARDS_SUCCESS" as const;
+export const LOAD_CARDS_FAILURE = "LOAD_CARDS_FAILURE" as const;
 
-export const requestData = () => ({
-	type: REQUEST_DATA,
+export const cardRequest = () => ({
+	type: LOAD_CARDS_REQUEST,
 });
 
-export const receiveData = (data: { quote: string }) => ({
-	type: RECEIVE_DATA,
-	data,
+export const cardSuccess = () => ({
+	type: LOAD_CARDS_SUCCESS,
+});
+
+export const cardFailure = () => ({
+	type: LOAD_CARDS_FAILURE,
 });

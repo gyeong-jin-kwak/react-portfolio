@@ -1,11 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import shortid from "shortid";
 import {
 	BREAK_POINT_MOBILE,
 	BREAK_POINT_TABLET,
 	BREAK_POINT_PC,
 } from "Components/utilStyles";
+
+interface Props {
+	cards: Array<{
+		id: string;
+		category: string;
+		title: string;
+		src: string;
+		content: string;
+		tags: Array<string>;
+	}>;
+}
 
 const Card = styled.article`
 	width: calc(100% - 2rem);
@@ -119,86 +131,37 @@ const HashTag = styled(Link)`
 	background: rgb(241, 243, 245);
 `;
 
-function ProjectCard(): JSX.Element | null {
+function ProjectCard({ cards }: Props): JSX.Element | null {
+	console.log(cards);
 	return (
 		<>
-			<Card>
-				{/* 카드이미지 */}
-				<CardImgLink to="/detail">
-					<CardImg>
-						<img
-							src="https://img.animalplanet.co.kr/news/2019/11/04/700/80g5o10sbyai5zhj9n8k.jpg"
-							alt=""
-						/>
-					</CardImg>
-				</CardImgLink>
+			{cards.map((card) => (
+				<Card key={card.id}>
+					{/* 카드이미지 */}
+					<CardImgLink to="/detail">
+						<CardImg>
+							<img src={card.src} alt={card.title} />
+						</CardImg>
+					</CardImgLink>
 
-				{/* 카드컨텐츠 */}
-				<CardContent>
-					<CardDescLink to="/detail">
-						<strong>카드제목</strong>
-						<CardDesc>
-							<p>이러이러한 프로젝트를 했다.</p>
-						</CardDesc>
-					</CardDescLink>
-					<TagsWrapper>
-						<HashTag to="/detail">React</HashTag>
-						<HashTag to="/detail">Typescript</HashTag>
-					</TagsWrapper>
-				</CardContent>
-			</Card>
-
-			<Card>
-				{/* 카드이미지 */}
-				<CardImgLink to="/detail">
-					<CardImg>
-						<img
-							src="https://img.animalplanet.co.kr/news/2019/11/04/700/80g5o10sbyai5zhj9n8k.jpg"
-							alt=""
-						/>
-					</CardImg>
-				</CardImgLink>
-
-				{/* 카드컨텐츠 */}
-				<CardContent>
-					<CardDescLink to="/detail">
-						<strong>카드제목</strong>
-						<CardDesc>
-							<p>이러이러한 프로젝트를 했다.</p>
-						</CardDesc>
-					</CardDescLink>
-					<TagsWrapper>
-						<HashTag to="/detail">React</HashTag>
-						<HashTag to="/detail">Typescript</HashTag>
-					</TagsWrapper>
-				</CardContent>
-			</Card>
-
-			<Card>
-				{/* 카드이미지 */}
-				<CardImgLink to="/detail">
-					<CardImg>
-						<img
-							src="https://img.animalplanet.co.kr/news/2019/11/04/700/80g5o10sbyai5zhj9n8k.jpg"
-							alt=""
-						/>
-					</CardImg>
-				</CardImgLink>
-
-				{/* 카드컨텐츠 */}
-				<CardContent>
-					<CardDescLink to="/detail">
-						<strong>카드제목</strong>
-						<CardDesc>
-							<p>이러이러한 프로젝트를 했다.</p>
-						</CardDesc>
-					</CardDescLink>
-					<TagsWrapper>
-						<HashTag to="/detail">React</HashTag>
-						<HashTag to="/detail">Typescript</HashTag>
-					</TagsWrapper>
-				</CardContent>
-			</Card>
+					{/* 카드컨텐츠 */}
+					<CardContent>
+						<CardDescLink to="/detail">
+							<strong>{card.title}</strong>
+							<CardDesc>
+								<p>{card.content}</p>
+							</CardDesc>
+						</CardDescLink>
+						<TagsWrapper>
+							{card.tags.map((tag) => (
+								<HashTag key={shortid.generate()} to="/detail">
+									{tag}
+								</HashTag>
+							))}
+						</TagsWrapper>
+					</CardContent>
+				</Card>
+			))}
 		</>
 	);
 }
