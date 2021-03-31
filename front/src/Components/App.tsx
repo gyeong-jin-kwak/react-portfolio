@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import GlobalStyles from "Components/GlobalStyles";
-import Router from "./Router";
 
-//test
-import { requestData } from "../actions/index";
+// test
 import { useSelector, useDispatch } from "react-redux";
+import { requestData } from "../actions/index";
 import { RootReducerType } from "../reducers/rootReducer";
+
+import Router from "./Router";
 
 function App(): JSX.Element {
 	// test
@@ -15,7 +16,7 @@ function App(): JSX.Element {
 	useEffect(() => {
 		dispatch(requestData());
 		console.log(sagaData);
-	}, [dispatch, sagaData]);
+	}, []);
 
 	return (
 		<>
@@ -27,6 +28,7 @@ function App(): JSX.Element {
 				onClick={() => {
 					dispatch(requestData());
 				}}
+				type="button"
 			>
 				fetch
 			</button>
