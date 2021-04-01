@@ -62,6 +62,19 @@ const CardImgLink = styled(Link)`
 	text-decoration: none;
 `;
 
+const CardCategory = styled.span`
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	padding: 5px 8px;
+	color: #000;
+	background-color: #fff;
+	border-radius: 1rem;
+	box-sizing: border-box;
+	font-size: 12px;
+	z-index: 1;
+`;
+
 const CardContent = styled.div`
 	padding: 1rem;
 	display: flex;
@@ -143,6 +156,9 @@ function ProjectCard({
 				{/* 카드이미지 */}
 				<CardImgLink to="/detail">
 					<CardImg>
+						<CardCategory>
+							{category === "working" ? "Working" : "Toy"}
+						</CardCategory>
 						<img src={src} alt={title} />
 					</CardImg>
 				</CardImgLink>
