@@ -106,8 +106,9 @@ const CardDescLink = styled(Link)`
 	text-decoration: none;
 
 	strong {
+		display: block;
+		margin: 0px 0px 0.7rem;
 		font-size: 1rem;
-		margin: 0px 0px 0.25rem;
 		line-height: 1.5;
 		word-break: break-word;
 		text-overflow: ellipsis;
@@ -118,7 +119,23 @@ const CardDescLink = styled(Link)`
 `;
 
 const TagsWrapper = styled.div`
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
 	margin-bottom: -0.875rem;
+
+	&::-webkit-scrollbar {
+		-webkit-appearance: none;
+		height: 3px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		background-color: rgba(12, 166, 120, 0.185);
+		box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+	}
 	@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
 		margin-bottom: -0.5rem;
 	}
@@ -126,12 +143,12 @@ const TagsWrapper = styled.div`
 
 const HashTag = styled(Link)`
 	display: inline-flex;
+	flex: 0 0 auto;
 	height: 1.5rem;
 	padding-left: 0.75rem;
 	padding-right: 0.75rem;
 	margin-right: 0.5rem;
-	margin-bottom: 0.5rem;
-	margin-bottom: 0.875rem;
+	margin-bottom: 0.6rem;
 	border-radius: 0.75rem;
 	-webkit-box-align: center;
 	align-items: center;
