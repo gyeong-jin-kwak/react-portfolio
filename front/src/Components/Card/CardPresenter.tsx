@@ -8,15 +8,24 @@ import {
 	BREAK_POINT_PC,
 } from "Components/utilStyles";
 
+// interface Props {
+// 	cards: Array<{
+// 		id: string;
+// 		category: string;
+// 		title: string;
+// 		src: string;
+// 		content: string;
+// 		tags: Array<string>;
+// 	}>;
+// }
+
 interface Props {
-	cards: Array<{
-		id: string;
-		category: string;
-		title: string;
-		src: string;
-		content: string;
-		tags: Array<string>;
-	}>;
+	id: string;
+	category: string;
+	src: string;
+	title: string;
+	content: string;
+	tags: Array<string>;
 }
 
 const Card = styled.article`
@@ -131,37 +140,42 @@ const HashTag = styled(Link)`
 	background: rgb(241, 243, 245);
 `;
 
-function ProjectCard({ cards }: Props): JSX.Element | null {
-	console.log(cards);
+function ProjectCard({
+	id,
+	category,
+	src,
+	title,
+	content,
+	tags,
+}: Props): JSX.Element | null {
+	// console.log(cards);
 	return (
 		<>
-			{cards.map((card) => (
-				<Card key={card.id}>
-					{/* 카드이미지 */}
-					<CardImgLink to="/detail">
-						<CardImg>
-							<img src={card.src} alt={card.title} />
-						</CardImg>
-					</CardImgLink>
+			<Card key={id}>
+				{/* 카드이미지 */}
+				<CardImgLink to="/detail">
+					<CardImg>
+						<img src={src} alt={title} />
+					</CardImg>
+				</CardImgLink>
 
-					{/* 카드컨텐츠 */}
-					<CardContent>
-						<CardDescLink to="/detail">
-							<strong>{card.title}</strong>
-							<CardDesc>
-								<p>{card.content}</p>
-							</CardDesc>
-						</CardDescLink>
-						<TagsWrapper>
-							{card.tags.map((tag) => (
-								<HashTag key={shortid.generate()} to="/detail">
-									{tag}
-								</HashTag>
-							))}
-						</TagsWrapper>
-					</CardContent>
-				</Card>
-			))}
+				{/* 카드컨텐츠 */}
+				<CardContent>
+					<CardDescLink to="/detail">
+						<strong>{title}</strong>
+						<CardDesc>
+							<p>{content}</p>
+						</CardDesc>
+					</CardDescLink>
+					<TagsWrapper>
+						{tags.map((tag) => (
+							<HashTag key={shortid.generate()} to="/detail">
+								{tag}
+							</HashTag>
+						))}
+					</TagsWrapper>
+				</CardContent>
+			</Card>
 		</>
 	);
 }
