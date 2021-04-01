@@ -1,11 +1,25 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import ToyPresenter from "./ToyPresenter";
+import { RootReducerType } from "../../reducers/rootReducer";
+
+interface ToyCards {
+	toyCards: Array<{
+		id: string;
+		category: string;
+		title: string;
+		src: string;
+		content: string;
+		tags: Array<string>;
+	}>;
+}
 
 const ToyContainer: React.VFC = () => {
-	// const [loading, setLoading] = useState(null);
-	// const [error, setError] = useState(null);
+	const cardData: ToyCards = useSelector(
+		(state: RootReducerType) => state.cardReducer
+	);
 
-	return <ToyPresenter />;
+	return <ToyPresenter toyCards={cardData.toyCards} />;
 };
 
 export default ToyContainer;

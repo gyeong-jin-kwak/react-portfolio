@@ -12,12 +12,13 @@ interface Props {
 	}>;
 }
 
-const ProjectsPresenter = ({ workingCards }: Props) => {
+const ProjectsPresenter = ({ workingCards }: Props): JSX.Element => {
 	return (
 		<div className="container container--card">
 			<div className="content-wrap">
 				{workingCards.map((card) => (
 					<ProjectCard
+						key={card.id}
 						id={card.id}
 						category={card.category}
 						src={card.src}

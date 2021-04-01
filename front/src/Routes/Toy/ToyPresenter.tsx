@@ -1,10 +1,33 @@
 import React from "react";
 import ProjectCard from "Components/Card/index";
 
-const ToyPresenter: React.VFC = () => {
+interface Props {
+	toyCards: Array<{
+		id: string;
+		category: string;
+		title: string;
+		src: string;
+		content: string;
+		tags: Array<string>;
+	}>;
+}
+
+const ToyPresenter = ({ toyCards }: Props): JSX.Element => {
 	return (
 		<div className="container container--card">
-			<div className="content-wrap">{/* <ProjectCard /> */}</div>
+			<div className="content-wrap">
+				{toyCards.map((card) => (
+					<ProjectCard
+						key={card.id}
+						id={card.id}
+						category={card.category}
+						src={card.src}
+						title={card.title}
+						content={card.content}
+						tags={card.tags}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };

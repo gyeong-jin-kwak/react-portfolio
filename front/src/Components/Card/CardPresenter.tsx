@@ -8,17 +8,6 @@ import {
 	BREAK_POINT_PC,
 } from "Components/utilStyles";
 
-// interface Props {
-// 	cards: Array<{
-// 		id: string;
-// 		category: string;
-// 		title: string;
-// 		src: string;
-// 		content: string;
-// 		tags: Array<string>;
-// 	}>;
-// }
-
 interface Props {
 	id: string;
 	category: string;
@@ -148,7 +137,6 @@ function ProjectCard({
 	content,
 	tags,
 }: Props): JSX.Element | null {
-	// console.log(cards);
 	return (
 		<>
 			<Card key={id}>
