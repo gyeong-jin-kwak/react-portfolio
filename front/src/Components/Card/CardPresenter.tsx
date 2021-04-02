@@ -171,7 +171,9 @@ function ProjectCard({
 		<>
 			<Card key={id}>
 				{/* 카드이미지 */}
-				<CardImgLink to="/detail">
+				<CardImgLink
+					to={category === "working" ? `/working/${id}` : `/toy/${id}`}
+				>
 					<CardImg>
 						<CardCategory>
 							{category === "working" ? "Working" : "Toy"}

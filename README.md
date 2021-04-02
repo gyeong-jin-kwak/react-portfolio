@@ -61,3 +61,5 @@ const BREAK_POINT_PC: number = 1200;
 - `yarn add -D @types/react-redux`
 - `yarn add shortid`
 - `yarn add -D @types/shortid`
+- `yarn add faker`
+- `yarn add -D @types/faker`

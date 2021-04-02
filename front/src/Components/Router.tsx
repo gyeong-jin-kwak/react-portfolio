@@ -26,7 +26,8 @@ function Routes(): JSX.Element {
 						<Route path="/projects" component={Projects} />
 						<Route path="/toyprojects" component={ToyProjects} />
 						<Route path="/search" component={Search} />
-						<Route path="/detail" component={Detail} />
+						<Route path="/working/:id" component={Detail} />
+						<Route path="/toy/:id" component={Detail} />
 
 						{/* 일치하는 경로가 없을 경우 '/' 경로로 이동 */}
 						<Redirect from="*" to="/" />
