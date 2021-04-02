@@ -1,9 +1,15 @@
 import React, { useCallback, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import styled from "styled-components";
 
 import Hamburger from "Components/Hamburger";
 import { BREAK_POINT_TABLET } from "Components/utilStyles";
+
+interface Props {
+	location: {
+		pathname: string;
+	};
+}
 
 const Header = styled.header`
 	position: fixed;
@@ -86,13 +92,20 @@ const MenuIcon = styled(Hamburger)`
 	}
 `;
 
-export default function Head(): JSX.Element {
+export default withRouter(function Head({
+	location: { pathname },
+}: Props): JSX.Element {
+	// { location: { pathname } }: Props
+
 	const [open, setOpen] = useState(false);
 
 	const handleClick = useCallback(() => {
 		const toggleOpen = !open;
 		setOpen(() => toggleOpen);
-	}, [open]);
+	}, []);
+
+	// console.log(props);
+	console.log(pathname);
 
 	return (
 		<Header>
@@ -107,12 +120,12 @@ export default function Head(): JSX.Element {
 				<Nav onClick={handleClick} open={open}>
 					<NavItemContainer>
 						<NavItem to="/about">About</NavItem>
-						<NavItem to="/projects">Projects</NavItem>
-						<NavItem to="/toyprojects">Toy</NavItem>
+						<NavItem to="/working">Projects</NavItem>
+						<NavItem to="/toy">Toy</NavItem>
 						<NavItem to="search">Search</NavItem>
 					</NavItemContainer>
 				</Nav>
 			</InnerHeader>
 		</Header>
 	);
-}
+});

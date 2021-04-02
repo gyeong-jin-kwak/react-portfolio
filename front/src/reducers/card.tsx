@@ -16,7 +16,6 @@ type dataActionType =
 	| ReturnType<typeof cardFailure>;
 
 const initialState = {
-	projectCards: [],
 	workingCards: [
 		{
 			id: shortid.generate(),

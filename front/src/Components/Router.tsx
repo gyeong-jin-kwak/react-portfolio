@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
 	BrowserRouter as Router,
 	Route,
@@ -23,8 +22,8 @@ function Routes(): JSX.Element {
 					<Switch>
 						<Route path="/" exact component={Home} />
 						<Route path="/about" component={About} />
-						<Route path="/projects" component={Projects} />
-						<Route path="/toyprojects" component={ToyProjects} />
+						<Route path="/working" exact component={Projects} />
+						<Route path="/toy" exact component={ToyProjects} />
 						<Route path="/search" component={Search} />
 						<Route path="/working/:id" component={Detail} />
 						<Route path="/toy/:id" component={Detail} />

@@ -184,7 +184,9 @@ function ProjectCard({
 
 				{/* 카드컨텐츠 */}
 				<CardContent>
-					<CardDescLink to="/detail">
+					<CardDescLink
+						to={category === "working" ? `/working/${id}` : `/toy/${id}`}
+					>
 						<strong>{title}</strong>
 						<CardDesc>
 							<p>{content}</p>
