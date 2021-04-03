@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import shortid from "shortid";
 
 interface Props {
 	result: {
@@ -12,10 +13,6 @@ interface Props {
 }
 
 const DetailPresenter = ({ result }: Props): JSX.Element => {
-	useEffect(() => {
-		console.log(result);
-	}, [result]);
-
 	return (
 		<div>
 			<span>{result.id}</span>
@@ -27,7 +24,7 @@ const DetailPresenter = ({ result }: Props): JSX.Element => {
 			<span>{result.content}</span>
 			<span>
 				{result.tags.map((tag) => (
-					<span>{tag}</span>
+					<span key={shortid.generate()}>{tag}</span>
 				))}
 			</span>
 		</div>

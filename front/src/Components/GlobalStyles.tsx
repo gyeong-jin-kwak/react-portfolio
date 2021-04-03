@@ -21,6 +21,13 @@ export default createGlobalStyle`
   }
 
   .container {
+    .content-wrap {
+      margin: 0 auto;
+        @media only screen and (min-width: ${BREAK_POINT_PC}px) {
+          max-width: 1024px;
+        }
+    }
+
     &--card {
       display: flex;
       flex: 1 1 0%;
@@ -29,7 +36,6 @@ export default createGlobalStyle`
       .content-wrap {
         display: flex;
         width: 100%;
-        margin: 0 auto;
         padding: 2rem 0;
         flex-wrap: wrap;
         @media only screen and (min-width: ${BREAK_POINT_PC}px) {
