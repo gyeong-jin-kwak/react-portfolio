@@ -42,7 +42,7 @@ const DetailContainer = ({
 		title: "",
 		src: "",
 		content: "",
-		tags: [],
+		tags: [""],
 	});
 
 	const cardData: Cards = useSelector(
@@ -56,11 +56,16 @@ const DetailContainer = ({
 			const targetID = id;
 			const targetIndex = projectCards.findIndex((el) => el.id === targetID);
 			const targetItem = projectCards[targetIndex];
-			setResult(Object.assign(result, targetItem));
-			console.log(result);
+			const nextItem = { ...result, ...targetItem };
+			setResult(nextItem);
+			// console.log(nextItem);
+			// console.log(result);
+
+			return <DetailPresenter result={result} />;
 		};
 		fetchData();
 	}, []);
+	// console.log(result);
 
 	return <DetailPresenter result={result} />;
 };

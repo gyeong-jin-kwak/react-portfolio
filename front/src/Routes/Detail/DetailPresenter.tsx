@@ -15,7 +15,7 @@ const DetailPresenter = ({ result }: Props): JSX.Element => {
 	useEffect(() => {
 		console.log(result);
 	}, [result]);
-	console.log(result);
+
 	return (
 		<div>
 			<span>{result.id}</span>
