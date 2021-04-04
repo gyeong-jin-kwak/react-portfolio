@@ -22,6 +22,7 @@ export default createGlobalStyle`
 
   .container {
     .content-wrap {
+      width: 100%;
       margin: 0 auto;
         @media only screen and (min-width: ${BREAK_POINT_PC}px) {
           max-width: 1024px;
@@ -42,6 +43,24 @@ export default createGlobalStyle`
           max-width: 1056px;
         }
       }
+    }
+  }
+
+  .divider {
+    display: block;
+
+    &.divider--thick {
+      background: rgb(241, 243, 245);
+      height: 1rem;
+      margin-top: 2rem;
+      box-shadow: rgb(0 0 0 / 4%) 0px 8px 8px -8p;
+    }
+
+    &.divider--thin {
+      width: 100%;
+      height: 1px;
+      margin: 1rem 0;
+      background: rgb(233, 236, 239);
     }
   }
 `;
