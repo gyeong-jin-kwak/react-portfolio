@@ -46,6 +46,7 @@ export default createGlobalStyle`
     }
   }
 
+  //divider 
   .divider {
     display: block;
 
@@ -61,6 +62,21 @@ export default createGlobalStyle`
       height: 1px;
       margin: 1rem 0;
       background: rgb(233, 236, 239);
+    }
+  }
+
+  //color
+  .key-bg {
+    background-color: #72A0DF;
+  }
+
+  .key-color {
+    color: #36619e;
+  }
+
+  .about-link {
+    &:hover {
+      filter: invert(.5) sepia(1) saturate(2) hue-rotate(175deg);
     }
   }
 `;

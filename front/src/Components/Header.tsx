@@ -101,8 +101,8 @@ export default withRouter(function Head({
 
 	const handleClick = useCallback(() => {
 		const toggleOpen = !open;
-		setOpen(() => toggleOpen);
-	}, []);
+		setOpen(toggleOpen);
+	}, [open]);
 
 	// console.log(props);
 	console.log(pathname);

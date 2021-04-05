@@ -152,7 +152,7 @@ const HashTag = styled(Link)`
 	border-radius: 0.75rem;
 	-webkit-box-align: center;
 	align-items: center;
-	color: rgb(12, 166, 120);
+	color: #36619e;
 	text-decoration: none;
 	font-weight: 500;
 	font-size: 0.75rem;
