@@ -1,11 +1,18 @@
 # GyeongJinKwak's Portfolio with React
 
 ## Tech Stack 
+**Front**
 - React
 - Typescript
 - Styled-Components
 - react + typescript + eslint + prettier
   - `yarn run prettier`
+---
+**Back**
+- Express
+- eslint + prettier
+- Nodemon
+  - `yarn run dev`
 
 ## Directory
 
@@ -70,3 +77,10 @@ const BREAK_POINT_PC: number = 1200;
 - `yarn add prettier --save-dev --save-exact`
 - `yarn add eslint-config-prettier --save-dev`
 - `yarn add eslint-plugin-prettier --save-dev`
+- `yarn add express`
+- `yarn add -D nodemon`
+
+## PortNum
+- Browser, Front: 3001 
+- Back: 3002
+- Server: 3306

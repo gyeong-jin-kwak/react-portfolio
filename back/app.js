@@ -1,9 +1,15 @@
-const http = require("http");
-const server = http.createServer((req, res) => {
-	console.log(req.url, req.method);
-	res.end("Hello node");
+const express = require("express");
+const cardRouter = require("./routes/card");
+
+const app = express();
+
+app.get("/", (req, res) => {
+	res.send("hello express");
 });
 
-server.listen(3002, () => {
+// prefix card
+app.use("/card", cardRouter);
+
+app.listen(3002, () => {
 	console.log("서버 실행중");
 });
