@@ -43,6 +43,7 @@ const BREAK_POINT_PC: number = 1200;
 
 ## Installed Modules
 
+**Front**
 - `yarn add react-router-dom`
 - `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D`
 - `yarn add styled-components`
@@ -63,3 +64,9 @@ const BREAK_POINT_PC: number = 1200;
 - `yarn add -D @types/shortid`
 - `yarn add faker`
 - `yarn add -D @types/faker`
+---
+**Back**
+- `yarn add eslint --save-dev`
+- `yarn add prettier --save-dev --save-exact`
+- `yarn add eslint-config-prettier --save-dev`
+- `yarn add eslint-plugin-prettier --save-dev`
