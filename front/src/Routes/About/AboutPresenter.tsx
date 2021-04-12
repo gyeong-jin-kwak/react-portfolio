@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Profile = styled.div`
@@ -67,7 +66,7 @@ const ProfileLinkGroup = styled.div`
 	color: rgb(173, 181, 189);
 `;
 
-const ProfileLink = styled(Link)`
+const ProfileLink = styled.a`
 	display: block;
 	width: 1.5rem;
 	height: 1.5rem;
@@ -92,42 +91,51 @@ const AboutPresenter: React.VFC = () => {
 							<ProfileInfoName>곽경진 | Gyeongjin Kwak</ProfileInfoName>
 							<ProfileInfoDesc>
 								<span>1991-12</span>
-								<address>경기도 구시시 갈매동</address>
+								<address>경기도 구리시 갈매동</address>
 								<em>Frontend && Publisher</em>
 							</ProfileInfoDesc>
 						</ProfileInfo>
 					</ProfileInfoWrap>
 					<span className="divider divider--thin" />
 					<ProfileLinkGroup>
-						<ProfileLink to="a">
+						<ProfileLink
+							href="https://github.com/gyeong-jin-kwak"
+							target="_blank"
+						>
 							<img
 								src={require("../../assets/github.svg")}
 								alt="github"
 								className="about-link"
 							/>
 						</ProfileLink>
-						<ProfileLink to="e">
+						<ProfileLink
+							href="https://worker-k.tistory.com/category/%EC%97%85%EB%AC%B4%EC%9D%B4%EC%95%BC%EA%B8%B0"
+							target="_blank"
+						>
 							<img
 								src={require("../../assets/tistory.svg")}
 								alt="tistory"
 								className="about-link"
 							/>
 						</ProfileLink>
-						<ProfileLink to="c">
+						<ProfileLink
+							href="https://velog.io/@gyeong-jin-kwak"
+							target="_blank"
+						>
 							<img
 								src={require("../../assets/velog.svg")}
 								alt="velog"
 								className="about-link"
 							/>
 						</ProfileLink>
-						<ProfileLink to="b">
+						<ProfileLink href="mailto:kgj1352@naver.com" target="_blank">
 							<img
 								src={require("../../assets/mail.svg")}
 								alt="mail"
 								className="about-link"
 							/>
 						</ProfileLink>
-						<ProfileLink to="d">
+						<ProfileLink href="tel:010-6737-1352" target="_blank">
 							<img
 								src={require("../../assets/phone.svg")}
 								alt="mail"
