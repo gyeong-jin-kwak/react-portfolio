@@ -16,15 +16,19 @@ type dataActionType =
 const initialState = {
 	aboutInfo: {
 		nameKorean: "곽경진",
-		nameEnglish: "Gyeong Jin Kwak",
+		nameEnglish: "GyeongJin Kwak",
 		aboutPhoto:
 			"https://media.vlpt.us/images/gyeong-jin-kwak/profile/05ed685b-eff1-479c-868c-143b11351ad0/익명이.jpg",
 		job: ["Frontend", "Publisher"],
 		birth: "1991-12",
 		address: "경기도 구리시 갈매동",
-		email: "kgj1352@naver.com",
-		github: "https://github.com/gyeong-jin-kwak",
-		blog: [
+		link: [
+			{
+				category: "github",
+				categoryInfo: {
+					address: "https://github.com/gyeong-jin-kwak",
+				},
+			},
 			{
 				category: "tistory",
 				categoryInfo: {
@@ -36,6 +40,18 @@ const initialState = {
 				category: "velog",
 				categoryInfo: {
 					address: "https://velog.io/@gyeong-jin-kwak",
+				},
+			},
+			{
+				category: "mail",
+				categoryInfo: {
+					address: "mailto:kgj1352@naver.com",
+				},
+			},
+			{
+				category: "phone",
+				categoryInfo: {
+					address: "tel:010-6737-1352",
 				},
 			},
 		],
@@ -64,20 +80,14 @@ const initialState = {
 		],
 		education: [
 			{
-				category: "university",
-				categoryInfo: {
-					name: "성신여자대학교",
-					period: "2012/03 - 2017/02",
-					major: "서양화과",
-				},
+				name: "성신여자대학교",
+				period: "2012/03 - 2017/02",
+				major: "서양화과",
 			},
 			{
-				category: "highSchool",
-				categoryInfo: {
-					name: "혜성여자고등학교",
-					period: "2007/3 - 2010/2",
-					major: "문과계열",
-				},
+				name: "혜성여자고등학교",
+				period: "2007/3 - 2010/2",
+				major: "문과계열",
 			},
 		],
 	},

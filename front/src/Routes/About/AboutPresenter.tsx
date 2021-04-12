@@ -1,5 +1,7 @@
+/* eslint-disable */
 import React from "react";
 import styled from "styled-components";
+import shortid from "shortid";
 
 const Profile = styled.div`
 	margin-top: 3rem;
@@ -77,7 +79,58 @@ const ProfileLink = styled.a`
 	}
 `;
 
-const AboutPresenter: React.VFC = () => {
+const AboutUnit = styled.div`
+	position: static;
+	display: grid;
+	width: 100%;
+	height: auto;
+	padding: 0 1rem;
+	min-height: auto;
+	grid-template-rows: min-content min-content min-content min-content min-content 1fr;
+	grid-template-columns: 100%;
+`;
+
+const Title = styled.strong`
+	display: block;
+	margin: 35px 0 14px 0;
+	color: #636161;
+	font-size: 14px;
+	overflow-wrap: break-word;
+	text-align: start;
+`;
+
+const InfoBox = styled.div`
+	display: flex;
+	width: 100%;
+	margin: 0px 0px 15px;
+	align-items: center;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+
+	em {
+		display: block;
+		width: 50%;
+		font-size: 17px;
+	}
+
+	div {
+		width: 50%;
+		margin-top: 6px;
+		margin-left: auto;
+	}
+
+	time,
+	span {
+		display: block;
+		font-size: 10px;
+		text-align: right;
+		color: #666;
+	}
+`;
+
+const AboutPresenter = ({ result }: any): JSX.Element => {
 	return (
 		<div className="container">
 			<div className="content-wrap">
@@ -88,62 +141,68 @@ const AboutPresenter: React.VFC = () => {
 							alt="곽경진 이미지"
 						/>
 						<ProfileInfo>
-							<ProfileInfoName>곽경진 | Gyeongjin Kwak</ProfileInfoName>
+							<ProfileInfoName>
+								{result.nameKorean} | {result.nameEnglish}
+							</ProfileInfoName>
 							<ProfileInfoDesc>
-								<span>1991-12</span>
-								<address>경기도 구리시 갈매동</address>
-								<em>Frontend && Publisher</em>
+								<span>{result.birth}</span>
+								<address>{result.address}</address>
+								<em>
+									{result.job[0]} && {result.job[1]}
+								</em>
 							</ProfileInfoDesc>
 						</ProfileInfo>
 					</ProfileInfoWrap>
 					<span className="divider divider--thin" />
 					<ProfileLinkGroup>
-						<ProfileLink
-							href="https://github.com/gyeong-jin-kwak"
-							target="_blank"
-						>
-							<img
-								src={require("../../assets/github.svg")}
-								alt="github"
-								className="about-link"
-							/>
-						</ProfileLink>
-						<ProfileLink
-							href="https://worker-k.tistory.com/category/%EC%97%85%EB%AC%B4%EC%9D%B4%EC%95%BC%EA%B8%B0"
-							target="_blank"
-						>
-							<img
-								src={require("../../assets/tistory.svg")}
-								alt="tistory"
-								className="about-link"
-							/>
-						</ProfileLink>
-						<ProfileLink
-							href="https://velog.io/@gyeong-jin-kwak"
-							target="_blank"
-						>
-							<img
-								src={require("../../assets/velog.svg")}
-								alt="velog"
-								className="about-link"
-							/>
-						</ProfileLink>
-						<ProfileLink href="mailto:kgj1352@naver.com" target="_blank">
-							<img
-								src={require("../../assets/mail.svg")}
-								alt="mail"
-								className="about-link"
-							/>
-						</ProfileLink>
-						<ProfileLink href="tel:010-6737-1352" target="_blank">
-							<img
-								src={require("../../assets/phone.svg")}
-								alt="mail"
-								className="about-link"
-							/>
-						</ProfileLink>
+						{
+							result.link.map((unit: any)=>
+								<ProfileLink
+									href={unit.categoryInfo.address}
+									target="_blank"
+									key={shortid.generate()}
+								>
+									<img
+										src={require(`../../assets/${unit.category}.svg`)}
+										alt={unit.category}
+										className="about-link"
+									/>
+								</ProfileLink>
+							)
+						}
 					</ProfileLinkGroup>
 				</Profile>
+
+				<span className="divider divider--thick" />
+
+				<AboutUnit>
+					<Title>Certificate /</Title>
+					{result.certificate.map((unit: any) => (
+						<InfoBox key={shortid.generate()}>
+							<em>{unit.category}</em>
+							<div>
+								<span>{unit.categoryInfo.agency}</span>
+								<time>{unit.categoryInfo.acquisitionDate}</time>
+							</div>
+						</InfoBox>
+					))}
+				</AboutUnit>
+
+				<span className="divider divider--thick" />
+
+				<AboutUnit>
+					<Title>Education /</Title>
+					{result.education.map((unit: any) => (
+						<InfoBox key={shortid.generate()}>
+							<em>{unit.name}</em>
+							<div>
+								<span>{unit.major}</span>
+								<time>{unit.period}</time>
+							</div>
+						</InfoBox>
+					))}
+				</AboutUnit>
+
 				<span className="divider divider--thick" />
 			</div>
 		</div>
