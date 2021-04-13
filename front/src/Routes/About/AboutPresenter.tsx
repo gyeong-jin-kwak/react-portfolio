@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import shortid from "shortid";
+import { BREAK_POINT_MOBILE } from "Components/utilStyles";
 
 const Profile = styled.div`
 	margin-top: 3rem;
@@ -72,7 +73,6 @@ const ProfileLink = styled.a`
 	display: block;
 	width: 1.5rem;
 	height: 1.5rem;
-	/* background-color: yellow; */
 
 	& + a {
 		margin-left: 1rem;
@@ -88,6 +88,12 @@ const AboutUnit = styled.div`
 	min-height: auto;
 	grid-template-rows: min-content min-content min-content min-content min-content 1fr;
 	grid-template-columns: 100%;
+	align-items: center;
+
+	@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+		grid-template-columns: 1fr 1fr;
+		column-gap: 50px;
+	}
 `;
 
 const Title = styled.strong`
@@ -97,6 +103,10 @@ const Title = styled.strong`
 	font-size: 14px;
 	overflow-wrap: break-word;
 	text-align: start;
+
+	@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+		padding-left: 1rem;
+	}
 `;
 
 const InfoBox = styled.div`
@@ -128,6 +138,15 @@ const InfoBox = styled.div`
 		text-align: right;
 		color: #666;
 	}
+
+	@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+		padding: 12px 0;
+		margin: 0px 0px 10px;
+
+		&:last-of-type {
+			margin-bottom: 10px;
+		}
+	}
 `;
 
 const AboutPresenter = ({ result }: any): JSX.Element => {
@@ -155,28 +174,26 @@ const AboutPresenter = ({ result }: any): JSX.Element => {
 					</ProfileInfoWrap>
 					<span className="divider divider--thin" />
 					<ProfileLinkGroup>
-						{
-							result.link.map((unit: any)=>
-								<ProfileLink
-									href={unit.categoryInfo.address}
-									target="_blank"
-									key={shortid.generate()}
-								>
-									<img
-										src={require(`../../assets/${unit.category}.svg`)}
-										alt={unit.category}
-										className="about-link"
-									/>
-								</ProfileLink>
-							)
-						}
+						{result.link.map((unit: any) => (
+							<ProfileLink
+								href={unit.categoryInfo.address}
+								target="_blank"
+								key={shortid.generate()}
+							>
+								<img
+									src={require(`../../assets/${unit.category}.svg`)}
+									alt={unit.category}
+									className="about-link"
+								/>
+							</ProfileLink>
+						))}
 					</ProfileLinkGroup>
 				</Profile>
 
 				<span className="divider divider--thick" />
 
+				<Title>Certificate /</Title>
 				<AboutUnit>
-					<Title>Certificate /</Title>
 					{result.certificate.map((unit: any) => (
 						<InfoBox key={shortid.generate()}>
 							<em>{unit.category}</em>
@@ -190,8 +207,8 @@ const AboutPresenter = ({ result }: any): JSX.Element => {
 
 				<span className="divider divider--thick" />
 
+				<Title>Education /</Title>
 				<AboutUnit>
-					<Title>Education /</Title>
 					{result.education.map((unit: any) => (
 						<InfoBox key={shortid.generate()}>
 							<em>{unit.name}</em>
@@ -204,6 +221,19 @@ const AboutPresenter = ({ result }: any): JSX.Element => {
 				</AboutUnit>
 
 				<span className="divider divider--thick" />
+
+				<Title>Career /</Title>
+				<AboutUnit>
+					{result.career.map((unit: any) => (
+						<InfoBox key={shortid.generate()}>
+							<em>{unit.name}</em>
+							<div>
+								<span>{unit.department}</span>
+								<time>{unit.period}</time>
+							</div>
+						</InfoBox>
+					))}
+				</AboutUnit>
 			</div>
 		</div>
 	);

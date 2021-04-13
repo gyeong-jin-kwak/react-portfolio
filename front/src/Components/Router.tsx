@@ -12,6 +12,7 @@ import ToyProjects from "Routes/Toy";
 import Search from "Routes/Search";
 import Detail from "Routes/Detail";
 import Header from "./Header";
+import Footer from "./Footer";
 
 function Routes(): JSX.Element {
 	return (
@@ -33,6 +34,7 @@ function Routes(): JSX.Element {
 					</Switch>
 				</main>
 			</div>
+			<Footer />
 		</Router>
 	);
 }

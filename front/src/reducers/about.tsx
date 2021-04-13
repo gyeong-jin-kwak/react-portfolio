@@ -90,6 +90,13 @@ const initialState = {
 				major: "문과계열",
 			},
 		],
+		career: [
+			{
+				name: "인픽스",
+				period: "2018/07 - 2020/08",
+				department: "FDG",
+			},
+		],
 	},
 };
 

@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import { BREAK_POINT_PC } from "Components/utilStyles";
+import { BREAK_POINT_MOBILE, BREAK_POINT_PC } from "Components/utilStyles";
 
 export default createGlobalStyle`
   ${reset};
@@ -55,6 +55,10 @@ export default createGlobalStyle`
       height: 1rem;
       margin-top: 2rem;
       box-shadow: rgb(0 0 0 / 4%) 0px 8px 8px -8p;
+
+      @media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+        margin-top: 1rem;
+      }
     }
 
     &.divider--thin {
