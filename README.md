@@ -71,6 +71,7 @@ const BREAK_POINT_PC: number = 1200;
 - `yarn add -D @types/shortid`
 - `yarn add faker`
 - `yarn add -D @types/faker`
+- `yarn add react-masonry-css`
 ---
 **Back**
 - `yarn add eslint --save-dev`

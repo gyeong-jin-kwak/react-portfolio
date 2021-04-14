@@ -83,4 +83,21 @@ export default createGlobalStyle`
       filter: invert(.5) sepia(1) saturate(2) hue-rotate(175deg);
     }
   }
+
+  // masonry
+  .my-masonry-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: -30px;
+    width: auto;
+  }
+  .my-masonry-grid_column {
+    padding-left: 30px;
+    background-clip: padding-box;
+  }
+  .my-masonry-grid_column > div {
+    background: yellow;
+    margin-bottom: 30px;
+  }
 `;
