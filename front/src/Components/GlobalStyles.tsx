@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
-import { BREAK_POINT_MOBILE, BREAK_POINT_PC } from "Components/utilStyles";
+import {
+	BREAK_POINT_MOBILE,
+	BREAK_POINT_TABLET,
+	BREAK_POINT_PC,
+} from "Components/utilStyles";
 
 export default createGlobalStyle`
   ${reset};
@@ -41,6 +45,17 @@ export default createGlobalStyle`
         flex-wrap: wrap;
         @media only screen and (min-width: ${BREAK_POINT_PC}px) {
           max-width: 1056px;
+        }
+      }
+    }
+
+    &--detail {
+      .content-wrap {
+        @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+          padding: 0 20px; 
+        }
+        @media only screen and (min-width: ${BREAK_POINT_PC}px) {
+          padding: 0;
         }
       }
     }

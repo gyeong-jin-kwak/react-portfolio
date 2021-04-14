@@ -11,6 +11,14 @@ interface WorkingCards {
 		src: string;
 		content: string;
 		tags: Array<string>;
+		participants: string;
+		period: string;
+		pages: string;
+		link: string;
+		items: Array<{
+			title: string;
+			content: string;
+		}>;
 	}>;
 }
 

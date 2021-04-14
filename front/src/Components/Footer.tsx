@@ -19,6 +19,7 @@ interface Link {
 const FooterWrap = styled.footer`
 	width: 100vw;
 	background-color: rgb(241, 243, 245);
+	padding: 0 1rem;
 `;
 
 const FooterInner = styled.div`

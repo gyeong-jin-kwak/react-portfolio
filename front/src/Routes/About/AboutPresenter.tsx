@@ -98,15 +98,12 @@ const AboutUnit = styled.div`
 
 const Title = styled.strong`
 	display: block;
+	padding-left: 1rem;
 	margin: 35px 0 14px 0;
 	color: #636161;
 	font-size: 14px;
 	overflow-wrap: break-word;
 	text-align: start;
-
-	@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
-		padding-left: 1rem;
-	}
 `;
 
 const InfoBox = styled.div`
@@ -119,6 +116,10 @@ const InfoBox = styled.div`
 		margin-bottom: 0;
 	}
 
+	&:only-of-type {
+		margin-bottom: 15px;
+	}
+
 	em {
 		display: block;
 		width: 50%;
@@ -127,7 +128,6 @@ const InfoBox = styled.div`
 
 	div {
 		width: 50%;
-		margin-top: 6px;
 		margin-left: auto;
 	}
 
