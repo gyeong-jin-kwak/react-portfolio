@@ -15,6 +15,7 @@ interface Props {
 	title: string;
 	content: string;
 	tags: Array<string>;
+	period: string;
 }
 
 const Card = styled.article`
@@ -98,6 +99,12 @@ const CardDesc = styled.div`
 		text-overflow: ellipsis;
 		color: rgb(73, 80, 87);
 	}
+
+	span {
+		display: block;
+		margin-bottom: 5px;
+		font-size: 10px;
+	}
 `;
 
 const CardDescLink = styled(Link)`
@@ -166,6 +173,7 @@ function ProjectCard({
 	title,
 	content,
 	tags,
+	period,
 }: Props): JSX.Element | null {
 	return (
 		<>
@@ -189,6 +197,7 @@ function ProjectCard({
 					>
 						<strong>{title}</strong>
 						<CardDesc>
+							<span>{period}</span>
 							<p>{content}</p>
 						</CardDesc>
 					</CardDescLink>

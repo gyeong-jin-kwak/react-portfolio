@@ -9,6 +9,7 @@ interface Props {
 		src: string;
 		content: string;
 		tags: Array<string>;
+		period: string;
 	}>;
 }
 
@@ -25,6 +26,7 @@ const ProjectsPresenter = ({ workingCards }: Props): JSX.Element => {
 						title={card.title}
 						content={card.content}
 						tags={card.tags}
+						period={card.period}
 					/>
 				))}
 			</div>

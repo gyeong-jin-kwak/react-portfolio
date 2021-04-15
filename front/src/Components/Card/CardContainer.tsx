@@ -8,6 +8,7 @@ interface Card {
 	title: string;
 	content: string;
 	tags: Array<string>;
+	period: string;
 }
 
 const CardContainer = ({
@@ -17,6 +18,7 @@ const CardContainer = ({
 	title,
 	content,
 	tags,
+	period,
 }: Card): JSX.Element => {
 	return (
 		<CardPresenter
@@ -26,6 +28,7 @@ const CardContainer = ({
 			title={title}
 			content={content}
 			tags={tags}
+			period={period}
 		/>
 	);
 };

@@ -50,7 +50,7 @@ const initialState = {
 		{
 			id: shortid.generate(),
 			category: "working",
-			title: "푸본 현대생명",
+			title: "보험 푸본 현대생명 홈페이지 리뉴얼",
 			src: faker.image.image(),
 			content:
 				"보험 회사인 푸본 현대생명의 기존 mobile과 pc 페이지를 리뉴얼 페이지 약 400-500 페이지로 구성",

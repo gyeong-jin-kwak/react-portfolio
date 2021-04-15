@@ -11,6 +11,7 @@ interface ToyCards {
 		src: string;
 		content: string;
 		tags: Array<string>;
+		period: string;
 	}>;
 }
 
