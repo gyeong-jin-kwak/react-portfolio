@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import shortid from "shortid";
 import { Link } from "react-router-dom";
-import { BREAK_POINT_MOBILE, BREAK_POINT_TABLET } from "Components/utilStyles";
+import { BREAK_POINT_TABLET } from "Components/utilStyles";
 
 interface Props {
 	result: {
@@ -37,7 +37,7 @@ const HeadWrap = styled.div`
 const HeadContent = styled.div`
 	@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
 		width: 50%;
-		margin-left: 25px;
+		margin-left: 40px;
 	}
 `;
 
@@ -46,9 +46,10 @@ const HeadTitle = styled.h1`
 	font-size: 2rem;
 	letter-spacing: 0.4px;
 	word-break: keep-all;
-	line-height: 1.8rem;
+	line-height: 2.2rem;
 	@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
-		margin-top: 0;
+		margin-top: 10px;
+		line-height: 1.8rem;
 	}
 `;
 
@@ -91,7 +92,7 @@ const TagsWrapper = styled.div`
 	overflow-x: scroll;
 	overflow-y: hidden;
 	-webkit-overflow-scrolling: touch;
-	margin-bottom: -0.875rem;
+	margin-bottom: 1rem;
 
 	&::-webkit-scrollbar {
 		-webkit-appearance: none;
@@ -103,7 +104,7 @@ const TagsWrapper = styled.div`
 		background-color: rgba(12, 166, 120, 0.185);
 		box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 	}
-	@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
+	@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
 		margin-bottom: 30px;
 	}
 `;
@@ -172,6 +173,39 @@ const ProjectDesc = styled.div`
 	}
 `;
 
+const BodyWrap = styled.div`
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 0;
+	margin: 3rem 20px 5rem;
+
+	@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 30px;
+		margin: 3rem 0 5rem;
+	}
+`;
+
+const ProductUnit = styled.div`
+	margin-bottom: 1.5rem;
+
+	em {
+		display: block;
+		margin-bottom: 0.5rem;
+		font-size: 1rem;
+		font-weight: bold;
+		color: #36619e;
+	}
+
+	p {
+		word-break: keep-all;
+	}
+
+	@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+		margin-bottom: 0;
+	}
+`;
+
 const DetailPresenter = ({ result }: Props): JSX.Element => {
 	return (
 		<div className="container container--detail">
@@ -191,7 +225,7 @@ const DetailPresenter = ({ result }: Props): JSX.Element => {
 							))}
 						</TagsWrapper>
 						<ProjectDesc>
-							<strong>This Project is..</strong>
+							<strong>This Project is...</strong>
 							<p>{result.content}</p>
 						</ProjectDesc>
 						<SubInfo>
@@ -222,6 +256,15 @@ const DetailPresenter = ({ result }: Props): JSX.Element => {
 						</SubInfo>
 					</HeadContent>
 				</HeadWrap>
+				<span className="divider divider--thin" />
+				<BodyWrap>
+					{result.items.map((item) => (
+						<ProductUnit key={shortid.generate()}>
+							<em>{item.title}</em>
+							<p>{item.content}</p>
+						</ProductUnit>
+					))}
+				</BodyWrap>
 			</div>
 		</div>
 	);
