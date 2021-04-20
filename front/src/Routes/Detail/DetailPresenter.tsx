@@ -42,17 +42,46 @@ const HeadContent = styled.div`
 `;
 
 const HeadTitle = styled.h1`
-	margin-bottom: 20px;
-	font-size: 25px;
+	margin: 20px 0 15px;
+	font-size: 2rem;
+	letter-spacing: 0.4px;
+	word-break: keep-all;
+	line-height: 1.8rem;
+	@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+		margin-top: 0;
+	}
 `;
 
 const ImgWrap = styled.div`
+	position: relative;
+	width: 100%;
+	padding-top: 52.1921%;
+
 	@media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
 		width: 50%;
 	}
 
 	img {
+		position: absolute;
+		top: 0px;
+		left: 0px;
 		width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: cover;
+	}
+
+	span {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		padding: 5px 8px;
+		color: #000;
+		background-color: #fff;
+		border-radius: 1rem;
+		box-sizing: border-box;
+		font-size: 12px;
+		z-index: 1;
 	}
 `;
 
@@ -75,7 +104,7 @@ const TagsWrapper = styled.div`
 		box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 	}
 	@media only screen and (min-width: ${BREAK_POINT_MOBILE}px) {
-		margin-bottom: 10px;
+		margin-bottom: 30px;
 	}
 `;
 
@@ -97,12 +126,59 @@ const HashTag = styled(Link)`
 	background: rgb(241, 243, 245);
 `;
 
+const SubInfo = styled.div`
+	strong,
+	span {
+		display: block;
+	}
+
+	ul li {
+		margin-bottom: 1.5rem;
+	}
+
+	strong {
+		margin-bottom: 0.5rem;
+		font-size: 1rem;
+		font-weight: bold;
+		color: #36619e;
+	}
+
+	span {
+		font-size: 0.9rem;
+	}
+
+	a {
+		text-decoration: underline;
+		&:hover {
+			color: #1494e9;
+		}
+	}
+`;
+
+const ProjectDesc = styled.div`
+	margin-bottom: 1.5rem;
+
+	strong {
+		display: block;
+		margin-bottom: 0.5rem;
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: #36619e;
+	}
+
+	p {
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+`;
+
 const DetailPresenter = ({ result }: Props): JSX.Element => {
 	return (
 		<div className="container container--detail">
 			<div className="content-wrap">
 				<HeadWrap>
 					<ImgWrap>
+						<span>{result.category === "working" ? "Working" : "Toy"}</span>
 						<img src={result.src} alt={result.title} />
 					</ImgWrap>
 					<HeadContent>
@@ -114,13 +190,36 @@ const DetailPresenter = ({ result }: Props): JSX.Element => {
 								</HashTag>
 							))}
 						</TagsWrapper>
-						<span>{result.category}</span>
-						<span>{result.content}</span>
-						<span>
-							{result.tags.map((tag) => (
-								<span key={shortid.generate()}>{tag}</span>
-							))}
-						</span>
+						<ProjectDesc>
+							<strong>This Project is..</strong>
+							<p>{result.content}</p>
+						</ProjectDesc>
+						<SubInfo>
+							<ul>
+								<li>
+									<strong>기간</strong>
+									<span>{result.period}</span>
+								</li>
+								<li>
+									<strong>인원</strong>
+									<span>{result.participants}</span>
+								</li>
+								<li>
+									<strong>참여 페이지</strong>
+									<span>{result.pages}</span>
+								</li>
+								{result.link ? (
+									<li>
+										<strong>페이지 바로가기</strong>
+										<span>
+											<a href={result.link}>{result.link}</a>
+										</span>
+									</li>
+								) : (
+									""
+								)}
+							</ul>
+						</SubInfo>
 					</HeadContent>
 				</HeadWrap>
 			</div>
