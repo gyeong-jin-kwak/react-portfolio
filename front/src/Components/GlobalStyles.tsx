@@ -59,6 +59,20 @@ export default createGlobalStyle`
         }
       }
     }
+
+    &--home {
+      .content-wrap {
+        display: grid;
+        grid-template-columns: 250px 1fr;
+        column-gap: 20px;
+        padding: 2rem 20px 0;
+        max-width: 1024px;
+
+        @media only screen and (min-width: ${BREAK_POINT_TABLET}px) {
+          padding: 2rem 0; 
+        }
+      }
+    }
   }
 
   //divider 

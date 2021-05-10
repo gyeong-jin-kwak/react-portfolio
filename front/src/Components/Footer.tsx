@@ -24,6 +24,7 @@ const FooterWrap = styled.footer`
 
 const FooterInner = styled.div`
 	display: flex;
+	max-width: 1024px;
 	align-items: center;
 	min-height: 150px;
 	margin: 0 auto;
