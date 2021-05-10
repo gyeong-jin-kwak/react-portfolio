@@ -44,7 +44,24 @@ const HomeContainer: React.VFC = () => {
 		(state: RootReducerType) => state.cardReducer
 	);
 
-	console.log(cardData);
+	const totalTags: string[] = [];
+	const result: any = {};
+
+	cardData.workingCards.map((item) => totalTags.push(...item.tags));
+
+	cardData.toyCards.map((item) => totalTags.push(...item.tags));
+
+	totalTags.forEach((x) => {
+		result[x] = (result[x] || 0) + 1;
+	});
+
+	const tagsKeys = Object.keys(result);
+	const tagsValues = Object.values(result);
+
+	console.log(totalTags);
+	console.log(result);
+	console.log(tagsKeys);
+	console.log(tagsValues);
 
 	// const [loading, setLoading] = useState(null);
 	// const [error, setError] = useState(null);
