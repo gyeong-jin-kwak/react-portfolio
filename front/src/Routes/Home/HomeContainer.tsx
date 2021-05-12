@@ -56,7 +56,7 @@ const HomeContainer: React.VFC = () => {
 	});
 
 	const tagsKeys = Object.keys(result);
-	const tagsValues = Object.values(result);
+	const tagsValues: Array<number> = Object.values(result);
 
 	console.log(totalTags);
 	console.log(result);
@@ -66,7 +66,7 @@ const HomeContainer: React.VFC = () => {
 	// const [loading, setLoading] = useState(null);
 	// const [error, setError] = useState(null);
 
-	return <HomePresenter />;
+	return <HomePresenter tagsKeys={tagsKeys} tagsValues={tagsValues} />;
 };
 
 export default HomeContainer;
