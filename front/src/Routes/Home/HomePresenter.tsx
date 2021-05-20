@@ -5,6 +5,7 @@ import shortid from "shortid";
 interface Props {
 	tagsKeys: Array<string>;
 	tagsValues: Array<number>;
+	result: any;
 }
 
 const TagGroup = styled.div`
@@ -16,15 +17,17 @@ const CardGroup = styled.div`
 	background: blue;
 `;
 
-const HomePresenter = ({ tagsKeys, tagsValues }: Props) => {
+const HomePresenter = ({ tagsKeys, tagsValues, result }: Props) => {
 	return (
 		<div className="container container--home">
 			<div className="content-wrap">
 				<TagGroup>
 					<ul>
+						{console.log(result)}
 						{tagsKeys.map((key) => (
 							<li key={shortid.generate()}>
 								<a href="www.naver.com">{key}</a>
+								<span>()</span>
 							</li>
 						))}
 					</ul>

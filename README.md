@@ -17,7 +17,8 @@
 ## Directory
 
 ```
-├── src
+├── front
+│    ├── src
 │    ├── Components
 │    │    ├── App.tsx
 │    │    ├── Header.tsx
@@ -29,7 +30,9 @@
 │    │    ├── Toy
 │    │    ├── Search
 │    │    └── Detail
-│    ├── assets
+│    └── assets
+├── back
+
 ```
 ## BreakPoint
 
