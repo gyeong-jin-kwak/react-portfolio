@@ -4,7 +4,7 @@ import shortid from "shortid";
 
 interface Props {
 	tagsKeys: Array<string>;
-	result: any;
+	result: { [k: string]: number };
 }
 
 const TagGroup = styled.div`
@@ -16,7 +16,7 @@ const CardGroup = styled.div`
 	background: blue;
 `;
 
-const HomePresenter = ({ tagsKeys, result }: Props) => {
+const HomePresenter = ({ tagsKeys, result }: Props): JSX.Element => {
 	return (
 		<div className="container container--home">
 			<div className="content-wrap">

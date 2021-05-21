@@ -45,7 +45,7 @@ const HomeContainer: React.VFC = () => {
 	);
 
 	const totalTags: string[] = [];
-	const result: any = {};
+	const result: { [k: string]: number } = {};
 
 	cardData.workingCards.map((item) => totalTags.push(...item.tags));
 
