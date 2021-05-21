@@ -56,23 +56,8 @@ const HomeContainer: React.VFC = () => {
 	});
 
 	const tagsKeys = Object.keys(result);
-	const tagsValues: Array<number> = Object.values(result);
 
-	// console.log(totalTags);
-	// console.log(result);
-	// console.log(tagsKeys);
-	// console.log(tagsValues);
-
-	// const [loading, setLoading] = useState(null);
-	// const [error, setError] = useState(null);
-
-	return (
-		<HomePresenter
-			tagsKeys={tagsKeys}
-			tagsValues={tagsValues}
-			result={result}
-		/>
-	);
+	return <HomePresenter tagsKeys={tagsKeys} result={result} />;
 };
 
 export default HomeContainer;
