@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
 import shortid from "shortid";
 
@@ -12,12 +12,17 @@ const TagGroup = styled.div`
 	background: #eee;
 
 	ul {
-		padding: 20px;
+		padding: 20px 0;
 	}
 
 	li {
-		padding: 15px 0;
 		cursor: pointer;
+	}
+
+	a {
+		display: inline-block;
+		width: 100%;
+		padding: 15px 20px;
 		&:hover {
 			background: #fff;
 		}
@@ -29,6 +34,10 @@ const CardGroup = styled.div`
 `;
 
 const HomePresenter = ({ tagsKeys, result }: Props): JSX.Element => {
+	const onClickButton = () => {
+		console.log("hi li");
+	};
+
 	return (
 		<div className="container container--home">
 			<div className="content-wrap">
@@ -36,13 +45,17 @@ const HomePresenter = ({ tagsKeys, result }: Props): JSX.Element => {
 					<ul>
 						{tagsKeys.map((key) => (
 							<li key={shortid.generate()}>
-								<a href="www.naver.com">{key}</a>
-								<span>({result[key]})</span>
+								<a href="www.naver.com" onClick={onClickButton}>
+									{key}
+									<span> ({result[key]}) </span>
+								</a>
 							</li>
 						))}
 					</ul>
 				</TagGroup>
-				<CardGroup>카드들이 들어갈 자리</CardGroup>
+				<CardGroup>
+					<h1>Javascript</h1>
+				</CardGroup>
 			</div>
 		</div>
 	);
