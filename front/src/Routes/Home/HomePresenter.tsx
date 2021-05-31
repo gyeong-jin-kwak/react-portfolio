@@ -9,7 +9,19 @@ interface Props {
 
 const TagGroup = styled.div`
 	padding: 20px 0;
-	background: yellow;
+	background: #eee;
+
+	ul {
+		padding: 20px;
+	}
+
+	li {
+		padding: 15px 0;
+		cursor: pointer;
+		&:hover {
+			background: #fff;
+		}
+	}
 `;
 
 const CardGroup = styled.div`
