@@ -13,6 +13,9 @@
 - eslint + prettier
 - Nodemon
   - `yarn run dev`
+- Sequelize
+  - `npx sequelize init` 
+  - config, migration, seeders
 
 ## Directory
 
@@ -83,8 +86,12 @@ const BREAK_POINT_PC: number = 1200;
 - `yarn add eslint-plugin-prettier --save-dev`
 - `yarn add express`
 - `yarn add -D nodemon`
+- `yarn add sequelize sequelize-cli mysql2`
+
+* msql2: node 와 mysql을 연결해주는 드라이버
+* sequelize: sql언어 대신 javascirpt 언어를 사용할 수 있도록 도와줌
 
 ## PortNum
 - Browser, Front: 3001 
-- Back: 3002
-- Server: 3306
+- Server: 3002
+- Database: 3306
