@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 module.export = (sequelize, DataTypes) => {
 	const Card = sequelize.define(
 		"Card",
@@ -20,6 +21,7 @@ module.export = (sequelize, DataTypes) => {
 		}
 	);
 
+	// eslint-disable-next-line
 	Card.associate = (db) => {};
 	return Card;
 };
